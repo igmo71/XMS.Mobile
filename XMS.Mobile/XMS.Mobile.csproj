@@ -55,6 +55,17 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.51" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.7" />
+		<PackageReference Include="Xamarin.GooglePlayServices.Code.Scanner" Version="116.1.0.15" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Shared\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Features\Scan\ScanPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

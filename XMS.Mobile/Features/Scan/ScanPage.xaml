@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XMS.Mobile.Features.Scan.ScanPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Scan">
+
+    <Grid Padding="24" RowDefinitions="Auto,Auto,Auto,Auto,*">
+
+        <Label
+            Grid.Row="0"
+            Text="XMS Mobile Scanner"
+            FontSize="28"
+            FontAttributes="Bold" />
+
+        <VerticalStackLayout Grid.Row="1" Margin="0,32,0,0" Spacing="8">
+            <Label Text="Scanner:" FontSize="14" />
+            <Label Text="{Binding ScannerName}" FontSize="22" FontAttributes="Bold" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="2" Margin="0,32,0,0" Spacing="8">
+            <Label Text="Last barcode:" FontSize="14" />
+            <Border Padding="16">
+                <Label
+                    Text="{Binding LastBarcode}"
+                    FontSize="24"
+                    FontAttributes="Bold" />
+            </Border>
+        </VerticalStackLayout>
+
+        <Button 
+            Grid.Row="3"    
+            Text="Scan"    
+            Command="{Binding ManualScanCommand}"    
+            IsVisible="{Binding CanManualScan}"    
+            HeightRequest="64"    
+            FontSize="22"
+            FontAttributes="Bold" />
+
+        <Label
+            Grid.Row="4"
+            Text="{Binding Status}"
+            VerticalOptions="End"
+            FontSize="14" />
+
+    </Grid>
+</ContentPage>
